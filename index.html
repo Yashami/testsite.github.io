@@ -1,0 +1,23 @@
+---
+layout: default
+title: Doohicky
+description: a site about nothing
+---
+
+<div id="home">
+  <div class="posts">
+    <h3>Posts</h3>
+    <div class="actions"><a href="http://prose.io/#{{ site.github.name }}/{{ site.github.project }}/new/{{ site.github.branch }}/_posts/YYYY-MM-DD-Untitled.md">Make a post.</a></div>
+  {% for post in site.posts %}
+    <div class="post">
+      <div class="post--title">
+        <a href="{{ post.url }}" class="post--title">{{ post.title }}</a>
+      </div>
+      <div class="post--date">{{ post.date | date_to_string }}</div>
+      {% if post.description %}
+        <p class="post--description">{{ post.description }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+</div>
